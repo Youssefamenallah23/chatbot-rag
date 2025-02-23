@@ -2,20 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.loader {
+  margin: 10px;
+  width: 60px;
+  aspect-ratio: 4;
+  background: no-repeat radial-gradient(circle closest-side, #383838 90%, #0000)
+      0 50%,
+    no-repeat radial-gradient(circle closest-side, #383838 90%, #0000) 50% 50%,
+    no-repeat radial-gradient(circle closest-side, #383838 90%, #0000) 100% 50%;
+
+  background-size: calc(100% / 3) 100%;
+
+  animation: loading 1s infinite linear;
+}
+.bubble.user {
+  border-radius: 20px 20px 0 20px !important;
+  background-color: #e1f4ffff;
+  margin-left: auto;
+}
+.bubble.assistant {
+  border-radius: 20px 20px 20px 0 !important;
+  background-color: #dce7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.bubble {
+  margin: 8px;
+  padding: 8px;
+  font-size: 15px;
+  border: none !important;
+  color: #383838;
+  box-shadow: #959da533 0 8px 24px;
+  width: 80%;
+  text-align: left;
+}
+
+@keyframes loading {
+  33% {
+    background-size: calc(100% / 3) 0, calc(100% / 3) 100%, calc(100% / 3) 100%;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  50% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0, calc(100% / 3) 100%;
+  }
+  66% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0;
+  }
 }
