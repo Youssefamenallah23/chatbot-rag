@@ -1,5 +1,3 @@
-function LoadingBubble() {
-  return <div className="loader "></div>;
+export default function LoadingBubble() {
+  return <li className="loader" aria-label="Loading response" />;
 }
-
-export default LoadingBubble;

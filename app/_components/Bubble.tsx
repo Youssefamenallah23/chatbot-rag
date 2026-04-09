@@ -1,14 +1,13 @@
-type messageProp = {
-  message: {
-    id: string;
-    content: string;
-    role: string;
-  };
+import type { Message } from "ai";
+
+type BubbleProps = {
+  message: Pick<Message, "role" | "content">;
 };
-function Bubble({ message }: messageProp) {
-  const { content, role } = message;
 
-  return <div className={`${role} bubble`}>{content}</div>;
+export default function Bubble({ message }: BubbleProps) {
+  return (
+    <li className={`${message.role} bubble whitespace-pre-wrap break-words`}>
+      {message.content}
+    </li>
+  );
 }
-
-export default Bubble;
