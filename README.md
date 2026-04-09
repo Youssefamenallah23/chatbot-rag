@@ -20,9 +20,9 @@ Required:
 
 Optional (defaults are shown in `.env.example`):
 
-- `GEMINI_CHAT_MODEL` (default: `gemini-2.0-flash`)
+- `GEMINI_CHAT_MODEL` (default: `gemini-3.0-flash`)
 - `GEMINI_EMBEDDING_MODEL` (default: `text-embedding-004`)
-- `GEMINI_DOCUMENT_MODEL` (default: `gemini-2.0-pro-exp`)
+- `GEMINI_DOCUMENT_MODEL` (default: `gemini-3.0-pro-exp`)
 - `RAG_TOP_K` (default: `8`)
 - `RAG_MAX_CHUNK_CHARS` (default: `900`)
 - `RAG_MAX_CONTEXT_CHARS` (default: `4500`)
